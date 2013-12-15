@@ -1,0 +1,49 @@
+Name:                   wavelets
+Version:                0.0.0
+Author:                 Scott Murphy<scottmurphy09@gmail.com>
+Maintainer:             Scott Murphy<scottmurphy09@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+-- Synopsis:               
+-- Description:            
+Cabal-Version:          >= 1.2
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Data.Wavelets
+  Other-Modules:        Data.Wavelets.Internal
+  Build-Depends:        base                     >= 4         &&   < 5
+                       ,bytestring               >= 0.9       &&   < 1.0
+                       ,mtl                      >= 2.1       &&   < 2.2
+                       ,hspec                    >= 1.7.2     &&   < 1.7.3
+                       ,lens                     >= 3.9      
+                       ,text                     >= 0.11.3.1 
+                       ,transformers             >= 0.3.0.0
+                       ,vector                   >= 0.10.9.1
+                       ,unordered-containers     >= 0.2.3.3
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       test
+                        ,src
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , wavelets
+                      , hspec
+
+
+Executable wavelets
+    main-is:            Main.hs
+    HS-Source-Dirs:     src
+    build-depends:      base
+                                          
+    ghc-options:      -threaded -O2 -rtsopts
+
+Source-Repository head
+  Type:                 git
+--  Location:             

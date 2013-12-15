@@ -1,5 +1,8 @@
 dist
-cabal-dev
+*sandbox*
+*.cabal-sanbox*
+*~*
+*#*
 *.o
 *.hi
 *.chi
