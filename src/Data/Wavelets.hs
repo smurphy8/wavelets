@@ -1,4 +1,4 @@
-module Wavelets (
+module Data.Wavelets (
     -- * Data types
     WaveletFilter(MakeWaveletFilter), WaveletPacker(MakeWaveletPacker),
     -- * Wavelet types

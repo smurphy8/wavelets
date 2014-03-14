@@ -1,48 +1,53 @@
 Name:                   wavelets
-Version:                0.0.0
+Version:                0.1.0
 Author:                 Scott Murphy<scottmurphy09@gmail.com>
 Maintainer:             Scott Murphy<scottmurphy09@gmail.com>
 License:                BSD3
 License-File:           LICENSE
--- Synopsis:               
--- Description:            
-Cabal-Version:          >= 1.8
+-- Synopsis:            NOT THE ORIGINAL AUTHOR!  See Below
+-- Description:         http://www.volkerschatz.com/haskell/haswavelet.html   
+Cabal-Version:          >= 1.10
 Build-Type:             Simple
 
 Library
   Default-Language:     Haskell2010
   HS-Source-Dirs:       src
+  extra-libraries:      gsl lapack gslcblas
   GHC-Options:          -Wall
   Exposed-Modules:      Data.Wavelets
   Other-Modules:        Data.Wavelets.Internal
   Build-Depends:        base                     >= 4         &&   < 5
                        ,bytestring               >= 0.9       &&   < 1.0
                        ,mtl                      >= 2.1       &&   < 2.2
-                       ,hspec                    >= 1.7.2     &&   < 1.7.3
                        ,lens                     >= 3.9      
                        ,text                     >= 0.11.3.1 
                        ,transformers             >= 0.3.0.0
                        ,vector                   >= 0.10.9.1
                        ,unordered-containers     >= 0.2.3.3
-
+                       ,hstatistics  == 0.2.5.1                     
+                       ,statistics == 0.11.0.0
 Test-Suite spec
   Type:                 exitcode-stdio-1.0
   Default-Language:     Haskell2010
-  Hs-Source-Dirs:       test
-                        ,src
-  Ghc-Options:          -Wall -prof -fprof-auto 
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
   Main-Is:              Spec.hs
   Build-Depends:        base
+                      , hspec 
                       , wavelets
-                      , hspec
-
+                      , vector
+                      , hstatistics
+                      , statistics
 
 Executable wavelets
     main-is:            Main.hs
     HS-Source-Dirs:     src
+    extra-libraries:    gsl lapack gslcblas
     build-depends:      base
+                      , wavelets
                                           
-    ghc-options:      -threaded -O2 -rtsopts -prof -fprof-auto 
+    ghc-options:      -threaded -O2 -rtsopts 
 
 Source-Repository head
   Type:                 git
