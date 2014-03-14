@@ -32,7 +32,7 @@ compareWaveletHaarResults = do
   return $ (length rslt ) == (length ctrl)
 
 
-testReconstructTimeSeries  = reconstructTimeSeries 1 (12-n) haar wp_separate $ drop n testWaveletHaar_PackerSeparate
+testReconstructTimeSeries  = reconstructTimeSeries (12-n) haar wp_separate $ drop n testWaveletHaar_PackerSeparate
   where n = 3
 
 main :: IO ()
@@ -48,25 +48,5 @@ spec  = do
       let tstData = testWaveletData
       tst <- compareWaveletHaarResults
       tst `shouldBe` True
-  describe "absAvgItrFcn" $ do
-    it "should return the average when folded over a series" $ do 
-      let tstData = replicate 10 1.3
-          (avg,tot) = foldl (\(a,t) b -> absAvgItrFcn a b (t+1) ) (0,0) tstData
-      avg `shouldBe` 1.3
-  describe "absMaxItrFcn" $ do
-    it "should return the maximum when folded overa  series" $ do 
-      let tstData = (replicate 10 1.3) ++ [100] :: [Double] 
-          mx = foldl (\a b -> absMaxItrFcn a b )  0 tstData
-      mx `shouldBe` 100
-  describe "maxAndAverage" $ do
-    it "should return the average, max , length of a given vector of doubles" $ do 
-      let tstData = testVectorData
-          (av,mx,tot) = maxAndAverage tstData
-      mx `shouldBe` 100
-
-
-
-testVectorData = V.fromList impulse 
-
 
 

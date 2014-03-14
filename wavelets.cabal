@@ -14,8 +14,11 @@ Library
   HS-Source-Dirs:       src
   extra-libraries:      gsl lapack gslcblas
   GHC-Options:          -Wall
-  Exposed-Modules:      Data.Wavelets
+  Exposed-Modules:      Data.Wavelets.Construction
+                        Data.Wavelets.Reconstruction
+                        Data.Wavelets.Scaling                                
   Other-Modules:        Data.Wavelets.Internal
+                        Data.Wavelets
   Build-Depends:        base                     >= 4         &&   < 5
                        ,bytestring               >= 0.9       &&   < 1.0
                        ,mtl                      >= 2.1       &&   < 2.2
@@ -24,6 +27,7 @@ Library
                        ,transformers             >= 0.3.0.0
                        ,vector                   >= 0.10.9.1
                        ,unordered-containers     >= 0.2.3.3
+                       ,hmatrix == 0.15.2.0
                        ,hstatistics  == 0.2.5.1                     
                        ,statistics == 0.11.0.0
 Test-Suite spec
@@ -37,6 +41,7 @@ Test-Suite spec
                       , hspec 
                       , wavelets
                       , vector
+                      , hmatrix
                       , hstatistics
                       , statistics
 
