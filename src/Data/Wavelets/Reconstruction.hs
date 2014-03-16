@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+
 module Data.Wavelets.Reconstruction where 
 import Prelude hiding (map,maximum,minimum,init)
 import Data.Wavelets 
@@ -18,3 +19,5 @@ reconstructTimeSeries :: Int -> WaveletFilter Double -> WaveletPacker Double c -
 reconstructTimeSeries i wft wptc c = vRslt
     where rslt = fidwt i wft wptc c
           vRslt = init.fromList $ rslt 
+
+
