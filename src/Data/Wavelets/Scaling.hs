@@ -6,6 +6,7 @@ import Prelude hiding (length,replicate,map,maximum,minimum)
 import Numeric.Statistics
 import Statistics.Function
 import Statistics.Sample
+import GHC.Generics
 import Data.Vector.Storable -- hiding (map)
 import Data.Packed.Matrix
 -- import Linear
