@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric #-}
 
 module Data.Wavelets.Scaling where 
 import Prelude hiding (length,replicate,map,maximum,minimum)
@@ -22,7 +22,7 @@ data SeriesFactors = SeriesFactors {
       seriesMin :: Double ,
       seriesMax :: Double ,
       seriesMean :: Double ,
-      seriesCount  :: Int } deriving (Show)
+      seriesCount  :: Int } deriving (Show,Generic)
 
 computeSeriesFactors :: Vector Double -> SeriesFactors
 computeSeriesFactors v = SeriesFactors mn mx avg tot
