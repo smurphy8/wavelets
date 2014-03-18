@@ -1,9 +1,10 @@
 Name:                   wavelets
-Version:                0.1.2
+Version:                0.1.3
 Author:                 Scott Murphy<scottmurphy09@gmail.com>
 Maintainer:             Scott Murphy<scottmurphy09@gmail.com>
 License:                BSD3
 License-File:           LICENSE
+category:               Data
 homepage:               https://github.com/smurphy8/wavelets
 synopsis:               Wavlet Transforms and scaling 
 description:            
@@ -17,6 +18,7 @@ Build-Type:             Simple
 Library
   Default-Language:     Haskell2010
   HS-Source-Dirs:       src
+  extra-source-files:   changelog.md
   extra-libraries:      gsl lapack gslcblas
   GHC-Options:          -Wall
   Exposed-Modules:      Data.Wavelets.Construction
@@ -52,6 +54,7 @@ Test-Suite spec
 
 Executable wavelets
     main-is:            Main.hs
+    Default-Language:   Haskell2010
     HS-Source-Dirs:     src
     extra-libraries:    gsl lapack gslcblas
     build-depends:      base
@@ -62,3 +65,5 @@ Executable wavelets
 Source-Repository head
   Type:                 git
   Location:             https://github.com/smurphy8/wavelets.git
+
+
