@@ -7,6 +7,7 @@ License-File:           LICENSE
 category:               Data
 homepage:               https://github.com/smurphy8/wavelets
 synopsis:               Wavlet Transforms and scaling 
+extra-source-files:     changelog.md
 description:            
 
    A Wavelet Transform library, no performance yet but the ability to construct wavelets and then recall them as downsampled versions for creating scaled mutli-resolution pictures. 
@@ -18,7 +19,7 @@ Build-Type:             Simple
 Library
   Default-Language:     Haskell2010
   HS-Source-Dirs:       src
-  extra-source-files:   changelog.md
+
   extra-libraries:      gsl lapack gslcblas
   GHC-Options:          -Wall
   Exposed-Modules:      Data.Wavelets.Construction
